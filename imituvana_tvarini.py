@@ -66,7 +66,7 @@ class Cat:
             self.to_have_tigiduk()
         self.end_of_day()
         self.is_alive()
-barsik = Cat(name="Леонід")
+barsik = Cat(name="Барсик")
 for day in range(365):
     if barsik.alive == False:
         break
