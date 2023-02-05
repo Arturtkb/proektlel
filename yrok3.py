@@ -7,22 +7,30 @@ class Student:
         self.progress = 0
         self.gladness = 50
         self.alive = True
+        self.money = 100
 
 
     def to_study(self):
         print("Я учится")
         self.progress += 0.1
         self.gladness -= 5
+        self.money -= 5
 
 
     def to_sleep(self):
         print("я спать")
         self.gladness += 3
 
+
+    def to_work(self):
+        print("я работать")
+        self.money += 10
+
     def to_have_fun(self):
         print("я играю в кс не мешай")
         self.progress -= 0.1
         self.gladness += 6
+        self.money -= 15
 
     def is_alive(self):
         if self.progress < 0:
@@ -38,17 +46,32 @@ class Student:
     def end_of_day(self):
         print(f'Задоволеність - {self.gladness}')
         print(f'Прогрес - {self.progress}')
+        print(f'Деньги - {self.money}')
 
     def live(self, day):
         info = f'День {day} з життя {self.name}'
         print(f'{info:=^40}')
-        choice = random.randint(1, 3)
-        if choice == 1:
+        if self.progress < 0.5:
             self.to_study()
-        elif choice == 2:
-            self.to_sleep()
-        elif choice == 3:
-            self.to_have_fun()
+        elif self.gladness < 20:
+            choice = random.randint(1, 2)
+            if choice == 1:
+                self.to_sleep()
+            if choice == 2:
+                self.to_have_fun()
+        elif self.money < 40:
+            self.to_work()
+
+        if self.money >= 40 and self.progress >= 0.5 and self.gladness >= 20:
+            slychainost = random.randint(1, 4)
+            if slychainost == 1:
+                self.to_study()
+            if slychainost == 2:
+                self.to_sleep()
+            if slychainost == 3:
+                self.to_work()
+            if slychainost == 4:
+                self.to_have_fun()
         self.end_of_day()
         self.is_alive()
 
