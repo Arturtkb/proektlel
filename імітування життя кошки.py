@@ -93,7 +93,7 @@ class Cat:
 
 
 
-barsik = Cat(name="Леонід")
+barsik = Cat(name="Барсик")
 for day in range(365):
     if barsik.alive == False:
         break
