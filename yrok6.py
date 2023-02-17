@@ -69,18 +69,6 @@ class SmartPhone(Computer, Monitor):
         print(self.model)
 
 
-phone = SmartPhone(model="Apple 15")
-phone.info()
 
 
-
-
-hello = Hello_Kity()
-hello.print()
-
-hi = Hi()
-hi.hi_print()
-
-asp = Aspirant()
-asp.age = 10000
 
